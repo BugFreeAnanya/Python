@@ -1,7 +1,7 @@
 import turtle
-turtle.Screen().bgcolor("lightblue")
+turtle.Screen().bgcolor("darkblue")
 board= turtle.Turtle()
-board.pencolor("red")
+board.pencolor("yellow")
 # Upper triangle of Star
 board.forward(100)
 board.left(120)

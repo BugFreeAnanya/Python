@@ -1,0 +1,16 @@
+import turtle
+turtle.Screen().bgcolor("Orange")
+
+clearer= turtle.Turtle()
+clearer.pencolor("DarkBlue")
+
+# Drawing a Rectangle
+clearer.forward(150)
+clearer.left(90)
+clearer.forward(100)
+clearer.left(90)
+clearer.forward(150)
+clearer.left(90)
+clearer.forward(100)
+
+turtle.done()
