@@ -4,4 +4,4 @@ third_word=" twelve"
 
 full_sentence=first_word+second_word+third_word
 print(full_sentence)
-print(full_sentence*3)
+print(full_sentence*4)
