@@ -1,4 +1,6 @@
 class Circle:
+     # Finding area and perimeter of Circle
+
     def __init__(self, r):
         self.radius = r
 
