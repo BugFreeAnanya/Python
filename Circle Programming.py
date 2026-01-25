@@ -10,7 +10,7 @@ class Circle:
     def perimeter(self):
         return 2 * 3.14 * self.radius
     
-    circle1 = Circle(10)
-    print(f"Radius of the Circle is: {circle1.radius}")
-    print("Area of the Circle is:", circle1.area())
-    print("Perimeter of the Circle is:", circle1.perimeter())
+circle1 = Circle(10)
+print(f"Radius of the Circle is: {circle1.radius}")
+print("Area of the Circle is:", circle1.area())
+print("Perimeter of the Circle is:", circle1.perimeter())

@@ -28,10 +28,10 @@ class Face:
     def drawMouth(self):
         penup()
         right(135)
-        forward(self.size/1.5)
+        forward(self.size/1.7)
         left(90)
         pendown()
-        circle(self.size/1.5, 90)
+        circle(self.size/1.7, 90)
         self.goHome()
     def drawNose(self):
         if self.noseSize=="large":

@@ -1,0 +1,13 @@
+my_tuple = ()
+print(my_tuple)
+my_tuple = (1, 2, 3)
+print(my_tuple)
+my_tuple = ('a', 'b', 'c', 'd', 'e')
+print(my_tuple[0])
+print(my_tuple[4])
+n_tuple = ('hello', [1, 2, 3], (4, 5, 6))
+print(n_tuple[1][1])
+print(n_tuple[0][2])
+print(my_tuple[0:3])
+for i in my_tuple:
+    print("hello", i)
