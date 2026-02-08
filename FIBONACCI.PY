@@ -8,7 +8,7 @@ def fib_series(n):
         n2 = nth
         count += 1
 
-n = int(input("Enter thenumber of terms: "))
+n = int(input("Enter the number of terms: "))
 if n <= 0:
     print("Please enter a positve integer")
 else:
