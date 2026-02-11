@@ -31,3 +31,32 @@ def initial_phonebook():
     return phone_book
 
 initial_phonebook()
+def menu():
+    print("********************************************************************")
+
+print("\t\t\tSMARTPHONE DIRECTORY")
+
+print("********************************************************************")
+
+print("\tYou can now perform the following operations on this phonebook\n")
+
+print("1. Add a new contact")
+
+print("2. Remove an existing contact")
+
+print("3. Delete all contacts")
+
+print("4. Search for a contact")
+
+print("5. Display all contacts")
+
+print("6. Exit phonebook")
+
+
+choice = int(input("Please enter your choice: "))
+
+
+
+def add_contact(pb):
+    for i in range(len(pb)):
+        
