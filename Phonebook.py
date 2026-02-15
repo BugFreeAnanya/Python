@@ -34,29 +34,159 @@ initial_phonebook()
 def menu():
     print("********************************************************************")
 
-print("\t\t\tSMARTPHONE DIRECTORY")
+    print("\t\t\tSMARTPHONE DIRECTORY")
 
-print("********************************************************************")
+    print("********************************************************************")
 
-print("\tYou can now perform the following operations on this phonebook\n")
+    print("\tYou can now perform the following operations on this phonebook\n")
 
-print("1. Add a new contact")
+    print("1. Add a new contact")
 
-print("2. Remove an existing contact")
+    print("2. Remove an existing contact")
 
-print("3. Delete all contacts")
+    print("3. Delete all contacts")
 
-print("4. Search for a contact")
+    print("4. Search for a contact")
 
-print("5. Display all contacts")
+    print("5. Display all contacts")
 
-print("6. Exit phonebook")
+    print("6. Exit phonebook")
 
+    def display_all(pb):
+        if not pb:
 
-choice = int(input("Please enter your choice: "))
+            print("List is empty:[]")
+        
+        else:
+            for i in range(len(pb)):
 
+                print(pb[i])
 
+    choice = int(input("Please enter your choice: "))
+    return choice
 
 def add_contact(pb):
+
+    dip = []
+    for i in range(len(pb[0])):
+        if i == 0:
+            dip.append(str(input("Enter name: ")))
+        if i == 1:
+            dip.append(int(input("Enter number: ")))
+        if i == 2:
+            dip.append(str(input("Enter email: ")))
+        if i == 3:
+            dip.append(str(input("Enter date of birth(dd/mm/yy): ")))
+        if i == 4:
+            dip.append(str(input("Enter category(family/friends/works/others): ")))
+    
+    pb.append(dip)
+    
+    return pb
+
+def remove_existing(pb):
+    query = str(input("Please enter the name of contact you wish to remove: "))
+    temp = 0
+
     for i in range(len(pb)):
-        
+        if query == pb[i][0]:
+            temp+= 1
+            
+            print(pb.pop(i))
+            print("This query has been removed.")
+                
+            return pb
+    if temp == 0:
+        print("Sorry you have entered an invalid query.\nPlease recheck and try again later.")
+        return pb
+    
+def delete_all(pb):
+    
+    return pb.clear()
+
+def search_existing(pb):
+
+    choice = int(input("Enter search criteria\n\n\n 1. Name\n 2. Number\n 3. Email-id\n 4.DOB\n 5. Category(family/friends/works/others)\ \nPlease enter: "))
+    
+    temp = []
+    check = -1
+    if choice == 1:
+
+        query = str(input("Please enter the name of contact you wish to search: "))
+        for i in range(len(pb)):
+            if query == pb[i][0]:
+                temp.append(pb[i])
+
+    elif choice == 2:
+
+        query = str(input("Please enter the number of contact you wish to search: "))
+        for i in range(len(pb)):
+            if query == pb[i][1]:
+                temp.append(pb[i])
+
+    elif choice == 3:
+
+        query = str(input("Please enter the e-mail ID\ of contact you wish to search: "))
+        for i in range(len(pb)):
+            if query == pb[i][2]:
+                temp.append(pb[i])
+
+    elif choice == 4:
+
+        query = str(input("Please enter the DOB (in dd/mm/yy) format ONLY)\ of contact you wish to search: "))
+        for i in range(len(pb)):
+            if query == pb[i][3]:
+                temp.append(pb[i])
+
+    elif choice == 5:
+
+        query = str(input("Please enter the category of contact you wish to search: "))
+        for i in range(len(pb)):
+            if query == pb[i][4]:
+                temp.append(pb[i])
+
+    else:
+        print("Invalid search criteria.")
+        return -1
+    
+    if check == -1:
+        return -1
+    
+    else:
+        display_all(temp)
+       
+        return check
+    
+def thanks():
+
+    print("************************************")
+   
+    print("Thank you for using our SMARTPHONE DIRECTORY system")
+    print("Please visit again!")
+   
+    print("************************************")
+    sys.exit("Goodbye! Have a nice day ahead.")
+
+print("............................................")
+print("Hello! dear user, Welcome to SMARTPHONE DIRECTORY system")
+print("You may now proceed to explore this directory")
+print("............................................")
+
+ch = 1
+pb = initial_phonebook()
+while ch in (1,2,3,4,5):
+    ch = menu()
+    if ch == 1:
+        pb = add_contact(pb)
+    elif ch == 2:
+        pb = remove_existing(pb)
+    elif ch == 3:
+        pb = delete_all(pb)
+    elif ch == 4:
+        d = search_existing(pb)
+        if d == -1:
+            print("The contact does not exist. Please try again.")
+    elif ch == 5:
+        display_all(pb)
+    else:
+        thanks()
